@@ -5,12 +5,14 @@ import java.util.ArrayList;
  */
 public class STPlayer {
     private ArrayList<STCard> cards;
-    private String playerId;
+    private int playerId;
     private String name;
 
-    public STPlayer(String playerId){
+    public STPlayer(int playerId, String name){
+        this.name=name;
         this.playerId=playerId;
     }
+
     public void setName(String name){
         this.name=name;
     }
@@ -19,6 +21,9 @@ public class STPlayer {
         this.cards = cards;
     }
     public String toString(){
-        return name+". Player "+playerId +"Cards= "+cards;
+        return "Hello " + name+".\nYou are player "+playerId +"\nYou have drawn cards: "+cards;
+    }
+    public String playerIdToString(){
+        return "Player "+playerId;
     }
 }

@@ -18,6 +18,7 @@ public class Game {
                     break;
                 case 2:
                 case 3:
+                    System.out.println();
                 case 4:
                     System.out.println("Mineral Supertrumps is a game designed to help players learn about the properties and uses of common rock-forming minerals.\n");
                     break;
@@ -31,22 +32,28 @@ public class Game {
         }
     }
 
+
     private static void startNewGame() {
+        Boolean gameOver=false;
         String name = getName();
         int numPlayers = getNumPlayers();
         STGame game = new STGame(numPlayers);
-        game.selectDealer();
-        game.dealRandomCardsToEachPlayer();
+        game.dealRandomCardsToEachPlayer(name);
         game.selectPlayer();
         STPlayer humPlayer = game.getHumanPlayer();
         humPlayer.setName(name);
         showPlayer(humPlayer);
+        game.selectDealer();
+        game.selectCurrentTurn();
+        while(gameOver=false){
+
+        }
     }
 
 
     private static void showPlayer(STPlayer humPlayer){
         System.out.println();
-        System.out.println("Human player= " + humPlayer.toString());
+        System.out.println(humPlayer.toString());
     }
 
     private static int getNumPlayers() {

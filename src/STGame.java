@@ -11,7 +11,7 @@ public class STGame {
     private int dealerId;
     private STPlayer[] players;
     private STDeck deck;
-    int yourPlayerId;
+    private int yourPlayerId;
 
     public STGame(int numPlayers) {
         this.numPlayers = numPlayers;
@@ -29,17 +29,23 @@ public class STGame {
         return dealerId;
     }
 
-    public void dealRandomCardsToEachPlayer() {
+    public void dealRandomCardsToEachPlayer(String name) {
 
         players = new STPlayer[numPlayers];
         for(int i = 0; i<numPlayers;i++){
-            players[i] = new STPlayer(""+i);
+            players[i] = new STPlayer(i, "bot"+i);
+            System.out.println(players[i]);
+
         }
 
         for (STPlayer player : players){
             ArrayList<STCard> cards = deck.dealCards(NUM_CARDS_TO_DEAL);
             player.setCards(cards);
         }
+        System.out.println(players[0]);
+        System.out.println(players[1]);
+        System.out.println(players[2]);
+        System.out.println(players[3]);
     }
 
     public void selectPlayer() {
@@ -48,5 +54,8 @@ public class STGame {
 
     public STPlayer getHumanPlayer() {
         return players[yourPlayerId];
+    }
+
+    public void selectCurrentTurn() {
     }
 }

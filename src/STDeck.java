@@ -11,7 +11,7 @@ public class STDeck {
     public STDeck(){
         cards = new ArrayList<STCard>();
         for (int i = 0; i<NUM_CARDS_INIT; i++){
-            cards.add(new STCard(i));
+            //cards.add(new STCard(i));
 
         }
 

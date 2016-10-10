@@ -4,3 +4,5 @@ User can choose number of players between 3 and 5
 System deals 8 cards to user
 User can view the cards in their hand
 Allow users to learn about various mineral properties
+Users can exit the application
+
